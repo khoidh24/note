@@ -1,0 +1,60 @@
+.preview.markdown-body {
+  flex: 0 0 50%;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: auto;
+  background: transparent;
+  color: var(--color-foreground);
+  margin-inline: auto;
+}
+
+.preview.markdown-body pre {
+  background-color: rgba(27, 31, 35, 0.75);
+}
+
+.preview.markdown-body ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+.preview.markdown-body ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+}
+
+.preview.markdown-body hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--borderColor-muted);
+}
+
+.preview.markdown-body table {
+  border-collapse: collapse;
+  margin-inline: auto;
+}
+
+.preview.markdown-body tr,
+.preview.markdown-body td {
+  background: transparent !important;
+}
+
+.preview.markdown-body a {
+  color: var(--color-amber-400);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.preview.markdown-body a:hover {
+  color: var(--color-amber-500);
+}
+
+.preview.markdown-body img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin-inline: auto;
+}
+
+.preview.markdown-body blockquote {
+  color: var(--color-foreground);
+  opacity: 80%;
+}

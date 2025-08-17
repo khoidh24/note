@@ -1,0 +1,32 @@
+.editor--wrapper {
+  height: 100%;
+  font-size: 1rem;
+}
+
+.cm-scroller {
+  background: transparent !important;
+  padding: 16px;
+}
+
+.cm-focused {
+  outline: transparent !important;
+}
+
+.cm-gutter .cm-lineNumbers {
+  background: transparent !important;
+}
+
+.cm-gutters.cm-gutters-before {
+  background: transparent !important;
+  border-right: none !important;
+  margin-right: 8px !important;
+}
+
+.cm-activeLineGutter {
+  background: transparent !important;
+  font-weight: bold !important;
+}
+
+.cm-activeLine.cm-line {
+  background: transparent !important;
+}
