@@ -4,6 +4,8 @@
 
 This is a simple note app that allows you to create and edit notes using Markdown.
 
+**Fun fact:** This README.md is written in this app.
+
 ## Features
 
 - Create and edit notes using Markdown
