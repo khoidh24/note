@@ -26,7 +26,6 @@
     "highlight.js": "^11.11.1",
     "katex": "^0.16.22",
     "lucide-react": "^0.539.0",
-    "mermaid": "^11.9.0",
     "next": "15.4.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -38,7 +37,6 @@
     "remark-gfm": "^4.0.1",
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
-    "unified": "^11.0.5",
     "zustand": "^5.0.7"
   },
   "devDependencies": {

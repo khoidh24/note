@@ -25,7 +25,7 @@ export default function Home() {
         <div className="relative z-10 flex h-screen app">
           <OpenOverlay />
           {isOpen && <Editor intialDoc={doc} onChange={handleDocChange} />}
-          <Preview doc={doc} className={isOpen ? "" : "!flex-[0_0_60%]"} />
+          <Preview doc={doc} previewMode={!isOpen} />
         </div>
       </div>
     </>

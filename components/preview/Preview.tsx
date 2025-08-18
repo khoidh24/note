@@ -14,35 +14,46 @@ import rehypeKatex from "rehype-katex";
 
 type Props = {
   doc: string;
-  className?: string;
+  previewMode: boolean;
 };
 
-const Preview: React.FC<Props> = ({ doc, className }) => {
-  return (
-    <div className={`preview markdown-body ${className}`}>
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm, remarkBreaks, remarkMath]}
-        rehypePlugins={[rehypeKatex, rehypeHighlight]}
-        components={{
-          a: ({ node, ...props }) => (
-            <a {...props} target="_blank" rel="noopener noreferrer" />
-          ),
-          img: ({ node, ...props }) => {
-            if (!props.src) return null;
+const Preview: React.FC<Props> = ({ doc, previewMode }) => {
+  const markdown = (
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm, remarkBreaks, remarkMath]}
+      rehypePlugins={[rehypeKatex, rehypeHighlight]}
+      components={{
+        a: ({ node, ...props }) => (
+          <a {...props} target="_blank" rel="noopener noreferrer" />
+        ),
+        img: ({ node, ...props }) =>
+          props.src ? (
+            <img
+              {...props}
+              className="max-w-full h-auto rounded-md my-2"
+              loading="lazy"
+              alt={props.alt || ""}
+            />
+          ) : null,
+      }}
+    >
+      {doc}
+    </ReactMarkdown>
+  );
 
-            return (
-              <img
-                {...props}
-                className="max-w-full h-auto rounded-md my-2"
-                loading="lazy"
-                alt={props.alt || ""}
-              />
-            );
-          },
-        }}
-      >
-        {doc}
-      </ReactMarkdown>
+  return (
+    <div
+      className={`preview markdown-body ${
+        previewMode ? "!w-screen" : "overflow-auto"
+      }`}
+    >
+      {previewMode ? (
+        <div className="container mx-auto px-0 md:px-24 lg:px-72 pb-4">
+          {markdown}
+        </div>
+      ) : (
+        markdown
+      )}
     </div>
   );
 };
